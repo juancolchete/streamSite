@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  streamSite:
+    container_name: streamSite_container
+    build: .
+    shm_size: '2gb'
+    env_file:
+      - .env
+    restart: unless-stopped

@@ -1,11 +1,11 @@
 FROM ubuntu:22.04
 
 # 1. Install dependencies
-# Added: xserver-xephyr, xfonts-base
+# ADDED: xvfb (Required for headless mode)
 RUN apt-get update && apt-get install -y \
     wget gnupg ffmpeg tini \
     dbus dbus-x11 dos2unix uuid-runtime \
-    xserver-xephyr xfonts-base \
+    xvfb \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Install Google Chrome Stable

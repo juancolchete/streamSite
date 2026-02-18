@@ -4,7 +4,7 @@ touch .env .env-temp
 source .env-temp
 
 cp .env .env-bak
-> .env
+touch .env
 
 cp nginx.conf nginx-bak.conf
 cp nginx-sample.conf nginx.conf
@@ -44,6 +44,8 @@ sed -i "s!RTMP_SERVERS_HERE!$PUSH_BLOCK!" nginx.conf
 docker compose up -d
 
 echo "RTMP_URL=rtmp://$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' nginx-rtmp)/live" >> .env
+read -p "Target site: " TARGET_SITE
+echo "TARGET_SITE=$TARGET_SITE" >> .env
 echo "TARGET_SITE=https://coinmarketcap.com" >> .env
 echo "RESOLUTION=1920x1080" >> .env
 

@@ -7,7 +7,7 @@ services:
       - .env
     restart: unless-stopped
   nginx-rtmp:
-    image: tiangolo/nginx-rtmp:latest
+    image: thiagoeolima/nginx-rtmps:latest
     container_name: nginx-rtmp
     restart: unless-stopped
     ports:

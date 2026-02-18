@@ -1,2 +1,4 @@
 .env
 nginx.conf
+.env-bak
+nginx-bak.conf

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-touch .env .env-temp
+touch .env .env-temp nginx.conf
 source .env-temp
 
 cp .env .env-bak
